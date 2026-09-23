@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="document-page"><div className="eyebrow">DIAMOND / 404</div><h1>No encontramos esta página.</h1><p>Puedes volver al activo y continuar tu consulta.</p><a className="button gold" href="/">Volver a El Bindho</a></main>;}
