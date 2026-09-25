@@ -20,6 +20,10 @@ Abre `http://127.0.0.1:5173`. El sitio usa la autenticación local de Sites para
 
 Para generar los archivos de producción ejecuta `npm run build`. Las herramientas de hosting y su archivo `.openai/hosting.json` corresponden al proyecto de Sites asociado; revisa el destino antes de desplegar desde otro entorno.
 
+## Vercel
+
+La configuración de Vercel compila con Nitro (`npm run build:vercel`) y genera `.vercel/output` en lugar de `.next`. Esto corrige el error de `routes-manifest.json` cuando Vercel detecta el paquete Next.js, pero **la compilación por sí sola no habilita el sitio comercial en Vercel**. El formulario y el panel siguen usando Cloudflare D1 y la autenticación administrada por Sites. En Vercel, el formulario devuelve un error de almacenamiento y la ruta de inicio de sesión del panel no existe hasta que se migren ambos servicios. No conectes el dominio público ni promociones esa implementación como operativa antes de completar y probar la migración de datos y acceso.
+
 ## Configuración privada
 
 Configura las variables en el servicio que aloja la aplicación, o en el archivo local `.env`:
