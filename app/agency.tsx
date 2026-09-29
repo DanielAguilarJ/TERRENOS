@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Check, FileText } from "lucide-react";
 import { AgencyHeader, AgencyFooter } from "./agency-shell";
 import PropertyLocation from "./property-location";
@@ -49,8 +48,8 @@ function ApartmentShowcase() {
         </ul>
         <Facts rows={apartmentFacts}/>
         <div className="showcase-actions">
-          <Link className="button gold" href="/propiedades/villas-de-la-hacienda#contacto">Agenda tu visita <ArrowUpRight size={18}/></Link>
-          <Link className="agency-action" href="/propiedades/villas-de-la-hacienda">Ver la ficha completa <ArrowUpRight size={18}/></Link>
+          <a className="button gold" href="/propiedades/villas-de-la-hacienda#contacto">Agenda tu visita <ArrowUpRight size={18}/></a>
+          <a className="agency-action" href="/propiedades/villas-de-la-hacienda">Ver la ficha completa <ArrowUpRight size={18}/></a>
           <WhatsAppContact property="villas-de-la-hacienda"/>
         </div>
         <ShareBar property="villas-de-la-hacienda" label="Comparte este departamento"/>
@@ -80,9 +79,9 @@ function LandShowcase() {
         </ul>
         <Facts rows={landFacts}/>
         <div className="showcase-actions">
-          <Link className="button gold" href="/propiedades/el-bindho#solicitud">Solicita el expediente <ArrowUpRight size={18}/></Link>
-          <Link className="agency-action" href="/propiedades/el-bindho">Ver la ficha completa <ArrowUpRight size={18}/></Link>
-          <Link className="agency-action" href="/ficha"><FileText size={17}/> Ficha para imprimir</Link>
+          <a className="button gold" href="/propiedades/el-bindho#solicitud">Solicita el expediente <ArrowUpRight size={18}/></a>
+          <a className="agency-action" href="/propiedades/el-bindho">Ver la ficha completa <ArrowUpRight size={18}/></a>
+          <a className="agency-action" href="/ficha"><FileText size={17}/> Ficha para imprimir</a>
           <WhatsAppContact property="el-bindho"/>
         </div>
         <ShareBar property="el-bindho" label="Comparte este terreno"/>
@@ -113,7 +112,7 @@ export default function Agency() {
     <ApartmentShowcase/>
     <LandShowcase/>
     <section className="agency-about" id="diamond"><p className="agency-kicker">ASSET MANAGEMENT DIAMOND</p><div><h2>Elegir una propiedad<br/>merece una<br/><em>buena conversación.</em></h2><p>Somos tu punto de contacto con la parte vendedora. Te mostramos el inmueble, te compartimos su documentación por un canal privado y coordinamos contigo cada paso, de la primera visita a la firma.</p><div className="agency-method">{[["01", "Ubicación a la vista", "Mapa, distancias y ruta para cada propiedad, para que sepas desde el primer vistazo si encaja con tu vida o tu proyecto."], ["02", "El siguiente paso", "Solicita información, la ficha completa o un recorrido con el equipo."], ["03", "Atención con contexto", "Tu consulta queda vinculada al inmueble que elegiste, para darle seguimiento sin repetir nada."]].map(([n, t, p]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div></div></section>
-    <section className="agency-contact-intro" id="contacto"><p className="agency-kicker">EMPECEMOS POR LO QUE TE INTERESA</p><h2>¿Dónde empieza<br/><em>tu próximo capítulo?</em></h2><div><Link className="agency-action" href="/propiedades/villas-de-la-hacienda#contacto">El departamento en Atizapán <ArrowUpRight size={20}/></Link><Link className="agency-action" href="/propiedades/el-bindho#solicitud">El terreno en Hidalgo <ArrowUpRight size={20}/></Link><WhatsAppContact/></div></section>
+    <section className="agency-contact-intro" id="contacto"><p className="agency-kicker">EMPECEMOS POR LO QUE TE INTERESA</p><h2>¿Dónde empieza<br/><em>tu próximo capítulo?</em></h2><div><a className="agency-action" href="/propiedades/villas-de-la-hacienda#contacto">El departamento en Atizapán <ArrowUpRight size={20}/></a><a className="agency-action" href="/propiedades/el-bindho#solicitud">El terreno en Hidalgo <ArrowUpRight size={20}/></a><WhatsAppContact/></div></section>
     <p className="agency-photo-credit">Fotografías de la región: <a href="https://commons.wikimedia.org/wiki/File:Parque_nacional_El_Chico_(Mineral_del_chico_valley).jpg" target="_blank" rel="noreferrer">Rafael Saldaña</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Vista_de_Pachuca,_Hidalgo,_M%C3%A9xico,_2013-10-10,_DD_01.JPG" target="_blank" rel="noreferrer">Diego Delso</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>. Encuadres adaptados. Mapas: © colaboradores de OpenStreetMap.</p>
   </main><AgencyFooter/></div>;
 }
