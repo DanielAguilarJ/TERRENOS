@@ -1,8 +1,10 @@
-# El Bindho · Asset Management Diamond
+# Diamond Inmobiliaria · Asset Management Diamond
 
-Sitio de presentación y recepción de consultas para el terreno El Bindho, en San Agustín Tlaxiaca, Hidalgo.
+Sitio inmobiliario con catálogo y recepción de consultas para El Bindho, en San Agustín Tlaxiaca, Hidalgo, y el departamento Villas de la Hacienda, en Atizapán de Zaragoza, Estado de México.
 
-La página presenta los datos del memorándum de la propiedad, una ficha para imprimir, modalidades de operación, preguntas frecuentes y un formulario que registra consultas en Cloudflare D1. El panel privado de gestión permite revisar interesados y cambiar su etapa comercial.
+La portada enlaza cada ficha: `/propiedades/el-bindho` y `/propiedades/villas-de-la-hacienda`. El Bindho conserva su ficha imprimible `/ficha`, sus modalidades y asistente. El departamento se presenta como ficha preliminar: precio, m², distribución, estacionamiento, elevador, fotografías y estado legal actual pendientes de confirmar. No se presenta el valor catastral como precio de venta ni se promete rentabilidad o aprobación de crédito.
+
+Los formularios guardan `property_id` en Cloudflare D1 y validan modalidades y presupuestos por inmueble. La migración `0001` conserva las consultas previas como `el-bindho`. El panel permite filtrar por propiedad, consultar pendientes y exportar las consultas. El webhook opcional incluye `propertyId`. La automatización existente de Codex se llama ahora “Consultas de Diamond” y vigila ambos inmuebles sin contactar compradores.
 
 ## Desarrollo local
 

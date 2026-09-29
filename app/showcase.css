@@ -1,0 +1,67 @@
+/* Portada: fichas completas por propiedad, ubicación y barra para compartir. Paleta de agency.css. */
+.hero-jumps{display:flex;flex-wrap:wrap;gap:6px 34px;margin:6px 0 26px}
+.agency-hero-copy .share-bar{margin-top:8px}
+
+.showcase{padding:100px 7% 105px;border-top:1px solid var(--agency-line,#d9dfda);scroll-margin-top:20px}
+.showcase-alt{background:#f0f3ef}
+.showcase-head h2{font-size:clamp(44px,4.6vw,70px);line-height:1.02;letter-spacing:-.02em;max-width:900px}
+.showcase-grid{display:grid;grid-template-columns:1fr 1.08fr;grid-template-rows:auto 1fr;grid-template-areas:"intro place" "copy place";gap:0 6%;margin-top:52px;align-items:start}
+.showcase-intro{grid-area:intro}
+.showcase-grid>.place{grid-area:place}
+.showcase-copy{grid-area:copy;margin-top:6px}
+.showcase-lead{font-size:21px;line-height:1.5;color:#203a31!important;letter-spacing:-.01em}
+.showcase-intro>p:not(.showcase-lead){font-size:16px;line-height:1.65;margin-top:18px}
+.showcase-points{list-style:none;padding:0;margin:26px 0 8px;display:grid;gap:12px}
+.showcase-points li{display:flex;gap:11px;align-items:start;font-size:15px;line-height:1.5}
+.showcase-points svg{flex:none;margin-top:3px;color:#c85433}
+.showcase-facts{margin:24px 0 0;border-top:1px solid #cfd8d0}
+.showcase-facts>div{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid #d8e0d9;font-size:14px;line-height:1.55}
+.showcase-facts dt{color:#617266}
+.showcase-facts dd{margin:0;color:#203a31}
+.showcase-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 30px;margin:30px 0 26px}
+.showcase-actions .button.gold,.apartment-site .place-actions a,.place-actions a{min-height:48px}
+.showcase-actions .button.gold{display:inline-flex;align-items:center;gap:22px;padding:14px 22px;background:#c85433;color:#fff;font-size:15px;font-weight:500}
+.showcase-actions .button.gold:hover{background:#b2492b}
+.showcase-actions .agency-action{min-height:48px;gap:18px;font-size:14px}
+
+.place{display:flex;flex-direction:column;gap:22px;min-width:0}
+.place-map{position:relative;display:block;overflow:hidden;border:1px solid #d3dcd4;background:#e9ece8;aspect-ratio:1200/760}
+.place-map picture{display:block;width:100%;height:100%}
+.place-map img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.place-map:hover img{transform:scale(1.02)}
+.place-map-open{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;background:#183a30;color:#fff;font-size:13px;padding:9px 13px}
+.place-map:focus-visible{outline:3px solid #c85433;outline-offset:4px}
+.place-body{display:flex;flex-direction:column;gap:14px}
+.place-caption{font-size:15px;line-height:1.6;color:#3d5046!important}
+.place-refs{list-style:none;padding:0;margin:0;border-top:1px solid #cfd8d0}
+.place-refs li{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px solid #d8e0d9;font-size:14px}
+.place-refs strong{font-weight:500;white-space:nowrap;color:#183a30}
+.place-note{font-size:12px!important;line-height:1.5;color:#5e6d63!important;margin:0!important}
+.place-actions{display:flex;flex-wrap:wrap;gap:10px}
+.place-actions a{display:inline-flex;align-items:center;gap:9px;padding:12px 16px;border:1px solid #183a30;color:#183a30;font-size:14px;background:#fff}
+.place-actions a:first-child{background:#183a30;color:#fff}
+.place-actions a:hover{background:#c85433;border-color:#c85433;color:#fff}
+.place-credit{font-size:11px;color:#6a786f}
+.place-credit a{text-decoration:underline}
+
+.share-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.share-bar-label{flex-basis:100%;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#617266;margin-bottom:2px}
+.share-bar a,.share-bar button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 15px;border:1px solid #bccabf;background:#fff;color:#203a31;font-size:14px;cursor:pointer;transition:background-color .18s,border-color .18s}
+.share-bar button:hover,.share-bar a:hover{border-color:#183a30}
+.share-bar .share-bar-whatsapp{background:#0f7a43;border-color:#0f7a43;color:#fff}
+.share-bar .share-bar-whatsapp:hover{background:#0b6537;border-color:#0b6537}
+.share-bar-dark .share-bar-label{color:#c2d4c7}
+.apartment-interest .share-bar{margin-top:24px}
+.share-bar-dark button{background:transparent;color:#fff;border-color:#5f7c6c}
+.share-bar-dark button:hover{border-color:#fff}
+.share-bar a:focus-visible,.share-bar button:focus-visible,.place-actions a:focus-visible{outline:3px solid #c85433;outline-offset:3px}
+
+/* El Bindho (property-site) comparte los mismos bloques */
+.property-site .place-caption{color:#4d574b!important}
+.estate-share{margin:0 7%;padding:26px 0;border-bottom:1px solid #daddd5}
+.location-section .location-map{padding:40px 0 40px 40px;align-self:center}
+.property-site .location-section .place-map img{min-height:0;max-height:none;height:100%}
+
+@media(max-width:1000px){.showcase-grid{grid-template-columns:1fr;grid-template-rows:none;grid-template-areas:"intro" "place" "copy";gap:34px}.showcase-facts>div{grid-template-columns:140px 1fr}}
+@media(max-width:700px){.location-section .location-map{padding:28px 6% 0}.property-site .location-section .place-map img{height:100%}.showcase{padding:64px 7% 70px}.showcase-grid{margin-top:34px}.showcase-lead{font-size:19px}.showcase-facts>div{grid-template-columns:1fr;gap:3px}.showcase-actions{gap:4px 24px}.showcase-actions .button.gold{width:100%;justify-content:space-between}.hero-jumps{flex-direction:column;gap:0;margin-bottom:18px}.hero-jumps .agency-action{width:100%}.place-map-open{right:10px;bottom:10px;font-size:12px}.place-map{aspect-ratio:520/600}.share-bar a,.share-bar button{flex:1 1 auto;justify-content:center}.place-actions a{flex:1 1 auto;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.place-map img{transition:none}}

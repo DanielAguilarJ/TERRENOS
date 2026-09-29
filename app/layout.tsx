@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import "./diamond.css";
 import "./fonts.css";
 import "./estate.css";
+import "./agency.css";
+import "./showcase.css";
 
 export const metadata: Metadata = {
-  title: "El Bindho · 7.6 ha en Hidalgo | Asset Management Diamond",
-  description: "Conoce El Bindho: 76,000 m² ofertados en San Agustín Tlaxiaca, Hidalgo. Compra directa, fideicomiso y coinversión.",
+  title: "Diamond Inmobiliaria | Asset Management Diamond",
+  description: "Propiedades en Hidalgo y Estado de México. Conoce el portafolio de Diamond y solicita información de cada inmueble.",
   metadataBase: new URL("https://diamond-el-bindho.oportunidades70814.chatgpt.site"),
-  openGraph: { title: "El Bindho | Asset Management Diamond", description: "76,000 m² ofertados en Hidalgo. Conoce el activo y explora tres modalidades de operación.", type: "website", locale: "es_MX" },
+  openGraph: { title: "Diamond Inmobiliaria", description: "Terrenos y departamentos. Información clara para tu próxima decisión inmobiliaria.", type: "website", locale: "es_MX", siteName: "Diamond Inmobiliaria", images: [{ url: "/og-diamond.jpg", width: 1200, height: 630, alt: "Diamond Inmobiliaria: dos propiedades en venta" }] },
+  twitter: { card: "summary_large_image", images: ["/og-diamond.jpg"] },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
