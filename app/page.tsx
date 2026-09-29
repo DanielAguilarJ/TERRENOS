@@ -1,9 +1,6 @@
-import PropertySite from "./property-site";
-import { propertyListing, siteOrigin } from "@/lib/site-info";
-export const metadata={
- title: "Terreno en venta en Hidalgo · 7.6 ha | El Bindho",
- description: "El Bindho: 76,000 m² ofertados en San Agustín Tlaxiaca, Hidalgo. Precio base $399 MXN/m². Consulta la ficha y solicita información o una visita.",
- alternates:{canonical:siteOrigin+"/"},
- openGraph:{url:siteOrigin+"/",title:"El Bindho · 7.6 hectáreas en Hidalgo",description:"Terreno en San Agustín Tlaxiaca. 76,000 m² ofertados · $399 MXN/m² · Compra directa o asociación."}
-};
-export default function Home() { return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(propertyListing).replace(/</g,"\\u003c")}}/><PropertySite /></>; }
+import Agency from "./agency";
+import { properties } from "@/lib/properties";
+import { siteOrigin, shareMetadata } from "@/lib/site-info";
+export const metadata={title:"Diamond Inmobiliaria | Departamento en Atizapán y terreno de 7.6 ha en Hidalgo",description:"Dos propiedades en venta: un departamento en Villas de la Hacienda, Atizapán de Zaragoza, y El Bindho, 76,000 m² en San Agustín Tlaxiaca, Hidalgo. Ubicación, datos y contacto en una sola página.",...shareMetadata("/","Diamond Inmobiliaria · Dos propiedades en venta","Departamento en Villas de la Hacienda, Atizapán, y El Bindho: 7.6 hectáreas en Hidalgo a $399 MXN/m². Mira las ubicaciones y las fichas.","/og-diamond.jpg","Diamond Inmobiliaria: departamento en Villas de la Hacienda y terreno El Bindho")};
+const catalog={"@context":"https://schema.org","@type":"ItemList",name:"Propiedades de Diamond Inmobiliaria",itemListElement:Object.values(properties).map((p,i)=>({"@type":"ListItem",position:i+1,name:p.name,url:siteOrigin+p.href,image:siteOrigin+p.ogImage}))};
+export default function Home(){return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(catalog).replace(/</g,"\\u003c")}}/><Agency/></>;}

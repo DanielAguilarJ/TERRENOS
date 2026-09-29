@@ -1,0 +1,1 @@
+ALTER TABLE `leads` ADD `property_id` text DEFAULT 'el-bindho' NOT NULL;
