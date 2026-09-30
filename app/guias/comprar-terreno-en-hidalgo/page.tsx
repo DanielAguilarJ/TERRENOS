@@ -3,7 +3,9 @@
 import "../guia.css";
 import { shareMetadata, siteOrigin } from "@/lib/site-info";
 import { grafo, jsonLd, migas, organizacion, paginasIndexables } from "@/lib/seo";
-import { CONSULTADA, LEYES, LISTA_FINAL, PASOS, RUTA_GUIA_TERRENO, type Cita } from "@/lib/guias/terreno-hidalgo";
+import { RUTA_GUIA_DEPTO } from "@/lib/guias/depto-atizapan";
+import { CONSULTADA, LEYES, LISTA_FINAL, PASOS, RUTA_GUIA_TERRENO } from "@/lib/guias/terreno-hidalgo";
+import { CitaLey } from "../partes";
 
 const TITULO = "Comprar un terreno en Hidalgo: qué revisar antes de firmar";
 const DESCRIPCION = "Qué revisar antes de comprar un terreno en Hidalgo: ejido, gravámenes, uso de suelo, catastro, traslación de dominio y escritura, con la ley citada.";
@@ -32,21 +34,6 @@ const articulo = {
   citation: Object.values(LEYES).map((l) => ({ "@type": "Legislation", name: l.nombre, url: l.url })),
 };
 
-/** Un fragmento que no empieza la oración se muestra con «…» delante, para que no parezca el artículo entero. */
-function fragmento(texto: string) {
-  return /^[a-záéíóúñ]/.test(texto) ? "…" + texto : texto;
-}
-
-function CitaLey({ c }: { c: Cita }) {
-  const ley = LEYES[c.ley];
-  return (
-    <blockquote cite={ley.url}>
-      <p>«{fragmento(c.texto)}»</p>
-      <p className="guia-fuente"><cite>{ley.nombre}</cite>, art. {c.articulo}</p>
-    </blockquote>
-  );
-}
-
 export default function GuiaTerrenoHidalgo() {
   return (
     <>
@@ -72,7 +59,7 @@ export default function GuiaTerrenoHidalgo() {
             <h3>Qué pedir</h3>
             <ul>{p.pedir.map((t) => <li key={t}>{t}</li>)}</ul>
             <h3>Lo que dice la ley</h3>
-            <div className="guia-citas">{p.citas.map((c) => <CitaLey key={c.ley + c.articulo + c.texto} c={c} />)}</div>
+            <div className="guia-citas">{p.citas.map((c) => <CitaLey key={c.ley + c.articulo + c.texto} ley={LEYES[c.ley]} c={c} />)}</div>
           </section>
         ))}
 
@@ -107,6 +94,7 @@ export default function GuiaTerrenoHidalgo() {
           <a href="/">Diamond Inmobiliaria</a>
           <a href="/propiedades/el-bindho">Terreno en Hidalgo: El Bindho</a>
           <a href="/propiedades/villas-de-la-hacienda">Departamento en Atizapán</a>
+          <a href={RUTA_GUIA_DEPTO}>Guía: comprar departamento en Atizapán</a>
           <a href="/privacidad">Privacidad</a>
         </footer>
       </main>
