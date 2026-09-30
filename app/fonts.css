@@ -14,3 +14,28 @@
   src: url(/fonts/libre-caslon-display.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/*
+ * Respaldos con métricas ajustadas. Con `font-display: swap` el texto se pinta primero con la fuente del sistema y
+ * salta al llegar la fuente web; si las dos miden distinto, los párrafos cambian de número de líneas y la página se
+ * mueve (CLS). Estas caras reescalan Arial y Times New Roman para que ocupen lo mismo que DM Sans y Libre Caslon
+ * Display. Cálculo de next/font (`calculateSizeAdjustValues` en next/dist/server/font-utils.js) con las métricas de
+ * next/dist/server/capsize-font-metrics.json: size-adjust = ancho medio web / ancho medio respaldo, y ascent/descent/
+ * line-gap divididos entre unitsPerEm x size-adjust. Arimo/Tinos y Liberation son clones métricos de Arial y Times.
+ * Cada pila que nombra la fuente web debe llevar su respaldo justo detrás (lo vigila `fuentes-respaldo` del auditor).
+ */
+@font-face {
+  font-family: 'DM Sans Fallback';
+  src: local('Arial'), local('ArialMT'), local('Arimo'), local('Liberation Sans');
+  size-adjust: 104.53%;
+  ascent-override: 94.90%;
+  descent-override: 29.66%;
+  line-gap-override: 0.00%;
+}
+@font-face {
+  font-family: 'Libre Caslon Display Fallback';
+  src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Tinos'), local('Liberation Serif');
+  size-adjust: 92.06%;
+  ascent-override: 105.36%;
+  descent-override: 28.89%;
+  line-gap-override: 0.00%;
+}
