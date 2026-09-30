@@ -5,5 +5,6 @@ declare namespace Cloudflare {
     ADMIN_EMAILS?: string;
     LEAD_WEBHOOK_URL?: string;
     LEAD_WEBHOOK_SECRET?: string;
+    WHATSAPP_NUMBER?: string;
   }
 }
