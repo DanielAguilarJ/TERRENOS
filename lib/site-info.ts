@@ -1,4 +1,11 @@
-export const siteOrigin = "https://diamond-el-bindho.oportunidades70814.chatgpt.site";
+/**
+ * Dominio público del sitio: de aquí salen canonical, og:url, og:image, sitemap, robots, datos estructurados y los
+ * enlaces de «Compartir». Debe ser un dominio que cualquiera abra sin iniciar sesión: la copia anterior en
+ * chatgpt.site es privada y responde 401, así que la vista previa salía sin imagen y el enlace compartido llevaba a
+ * una página de acceso. Es una constante y no una variable de entorno porque `share-bar.tsx` corre en el navegador.
+ * Si el sitio estrena dominio propio, se cambia solo esta línea.
+ */
+export const siteOrigin = "https://diamondassetmanagement.vercel.app";
 
 /** Vista previa al compartir (WhatsApp, Facebook, X, iMessage): imagen 1200x630 generada en public/. */
 export function shareMetadata(path: string, title: string, description: string, image: string, alt: string) {
