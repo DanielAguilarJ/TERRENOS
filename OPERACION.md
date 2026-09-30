@@ -50,6 +50,16 @@ Fotografía de portada: Rafael Saldaña, Parque nacional El Chico (Mineral del C
 
 Fuentes tipográficas: DM Sans y Libre Caslon Display, alojadas en el propio sitio. Licencias OFL en public/fonts.
 
+## Alta en buscadores (solo la puede hacer el propietario)
+
+El sitio publica sitemap, robots y datos estructurados, pero que un buscador lo indexe no se puede forzar ni comprobar desde el código. Orden recomendado:
+
+1. Google Search Console: crear una propiedad de tipo «Prefijo de URL» con `https://diamondassetmanagement.vercel.app/` (la de tipo «Dominio» exige DNS, y el de `vercel.app` no es de la empresa). Método «Etiqueta HTML»: copiar la etiqueta, pegarla en la variable `GOOGLE_SITE_VERIFICATION` del proyecto en Vercel (entorno Production), volver a desplegar y pulsar «Verificar». Después, en «Sitemaps», enviar `sitemap.xml`. No borrar la variable al terminar: Google vuelve a comprobar la etiqueta.
+2. Bing Webmaster Tools: «Importar desde Google Search Console», que no pide token. Para verificar por separado, el token de su etiqueta va en `BING_SITE_VERIFICATION`, igual que el de Google.
+3. IndexNow: con este cambio publicado, `node scripts/indexnow.mjs` comprueba la llave y muestra el envío sin mandarlo; `node scripts/indexnow.mjs --enviar` avisa a Bing y a los demás buscadores participantes (Google no usa IndexNow). Se envía una vez al publicar contenido nuevo, no en cada despliegue.
+4. Perfil de Negocio de Google: solo con un domicilio donde se atienda a clientes o una zona de servicio declarada. Es lo que aparece en Maps y en las búsquedas locales; nombre, domicilio y teléfono deben coincidir con los del sitio.
+5. Dominio propio: `vercel.app` se puede posicionar, pero un dominio de la empresa es la palanca de marca más grande. Al conectarlo se cambia `siteOrigin` en `lib/site-info.ts`, se redirige el dominio anterior y se da de alta una propiedad nueva en Search Console.
+
 ## Operación técnica
 
 La configuración de recursos está en `.openai/hosting.json`; no contiene secretos. Credenciales y secretos deben mantenerse en Sites. Variables documentadas en `.env.example`. No publicar `.env`, bases locales ni datos de pruebas. Las migraciones bajo `drizzle/` son únicamente de esquema. Las consultas D1 usan parámetros.

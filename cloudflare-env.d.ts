@@ -6,5 +6,7 @@ declare namespace Cloudflare {
     LEAD_WEBHOOK_URL?: string;
     LEAD_WEBHOOK_SECRET?: string;
     WHATSAPP_NUMBER?: string;
+    GOOGLE_SITE_VERIFICATION?: string;
+    BING_SITE_VERIFICATION?: string;
   }
 }
