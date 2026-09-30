@@ -61,4 +61,5 @@ export const paginasIndexables = [
   { ruta: "/", lastmod: "2026-09-30" },
   { ruta: "/propiedades/el-bindho", lastmod: "2026-09-30" },
   { ruta: "/propiedades/villas-de-la-hacienda", lastmod: "2026-09-30" },
+  { ruta: "/guias/comprar-terreno-en-hidalgo", lastmod: "2026-09-30" },
 ] as const;

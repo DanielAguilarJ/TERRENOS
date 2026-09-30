@@ -87,7 +87,7 @@ export default function PropertySite() {
       <FAQ/>
       <ContactSection request={request}/>
     </main>
-    <footer><div className="footer-top"><a className="brand" href="/"><Diamond/><span>DIAMOND<small>ASSET MANAGEMENT</small></span></a><p>El Bindho, Hidalgo.<br/>Gestión de activos · Región Centro.</p><div className="footer-links"><a href="/propiedades/villas-de-la-hacienda">Departamento en Atizapán</a><a href="/ficha">Ficha del activo</a><a href="/privacidad">Privacidad</a><a href="/gestion">Acceso de gestión</a></div></div><div className="footer-wordmark" aria-hidden="true">Tierra. Patrimonio.</div><small>Información comercial basada en el memorándum aportado. Sujeta a validación documental, disponibilidad y acuerdo entre las partes.</small></footer>
+    <footer><div className="footer-top"><a className="brand" href="/"><Diamond/><span>DIAMOND<small>ASSET MANAGEMENT</small></span></a><p>El Bindho, Hidalgo.<br/>Gestión de activos · Región Centro.</p><div className="footer-links"><a href="/propiedades/villas-de-la-hacienda">Departamento en Atizapán</a><a href="/guias/comprar-terreno-en-hidalgo">Guía: comprar terreno en Hidalgo</a><a href="/ficha">Ficha del activo</a><a href="/privacidad">Privacidad</a><a href="/gestion">Acceso de gestión</a></div></div><div className="footer-wordmark" aria-hidden="true">Tierra. Patrimonio.</div><small>Información comercial basada en el memorándum aportado. Sujeta a validación documental, disponibilidad y acuerdo entre las partes.</small></footer>
     <PropertyAssistant/>
     <div className="mobile-contact"><span>$399 <small>MXN/m²</small></span><a href="#solicitud" onClick={() => inquire("informacion", "movil-fijo")}>Solicitar información <ArrowUpRight size={17}/></a></div>
   </div>;
