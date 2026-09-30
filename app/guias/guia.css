@@ -1,0 +1,25 @@
+/* Guías para compradores: página de documento (.document-page) con citas de ley legibles en móvil. */
+.guia-migas{display:flex;flex-wrap:wrap;gap:10px;font-size:14px;color:#526570}
+.guia-migas a{text-decoration:underline}
+.guia .lead{font-size:20px;line-height:1.6;color:var(--ink)}
+.guia-fecha{font-size:14px!important;color:#5b6d76}
+.guia section{border-top:1px solid #dbe1e3;margin-top:48px;scroll-margin-top:20px}
+.guia h3{font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:600;letter-spacing:.02em;margin:28px 0 10px;color:#23434b}
+.guia ul,.guia ol{padding-left:22px;margin:0;color:#526570;line-height:1.7}
+.guia ul{list-style:disc}.guia ol{list-style:decimal}
+.guia li{margin:7px 0}
+.guia-indice a{text-decoration:underline;text-underline-offset:4px}
+.guia-citas{display:grid;gap:12px}
+.guia blockquote{margin:0;padding:15px 18px;border-left:3px solid #b69a66;background:#f5f7f7}
+.guia blockquote p{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.6;color:#23434b}
+.guia blockquote .guia-fuente{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#5b6d76;margin-top:7px}
+.guia cite{font-style:normal}
+.guia-lista li{padding-left:4px}
+.guia .button{margin-top:10px}
+.guia-tabla{overflow-x:auto}
+.guia table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5}
+.guia th,.guia td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-bottom:1px solid #dbe1e3}
+.guia th{font-weight:600;color:#23434b;white-space:nowrap}
+.guia td:not(:first-child){white-space:nowrap;color:#526570}
+.guia footer.guia-pie{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:14px 26px;padding:26px 0 0;margin-top:50px;border-top:1px solid #dbe1e3;font-size:14px}
+@media(max-width:700px){.guia .lead{font-size:18px}.guia td:not(:first-child){white-space:normal}.guia footer.guia-pie{padding-bottom:0}}
