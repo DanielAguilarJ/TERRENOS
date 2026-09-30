@@ -8,4 +8,6 @@ export const env = {
   LEAD_WEBHOOK_URL: process.env.LEAD_WEBHOOK_URL ?? "",
   LEAD_WEBHOOK_SECRET: process.env.LEAD_WEBHOOK_SECRET ?? "",
   WHATSAPP_NUMBER: process.env.WHATSAPP_NUMBER ?? "",
+  GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION ?? "",
+  BING_SITE_VERIFICATION: process.env.BING_SITE_VERIFICATION ?? "",
 };

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { env } from "cloudflare:workers";
 import { siteOrigin } from "@/lib/site-info";
+import { verificacionBuscadores } from "@/lib/verificacion";
 import "./diamond.css";
 import "./fonts.css";
 import "./estate.css";
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   openGraph: { title: "Diamond Inmobiliaria", description: "Terrenos y departamentos. Información clara para tu próxima decisión inmobiliaria.", type: "website", locale: "es_MX", siteName: "Diamond Inmobiliaria", images: [{ url: "/og-diamond.jpg", width: 1200, height: 630, alt: "Diamond Inmobiliaria: dos propiedades en venta" }] },
   twitter: { card: "summary_large_image", images: ["/og-diamond.jpg"] },
+  verification: verificacionBuscadores(env.GOOGLE_SITE_VERIFICATION, env.BING_SITE_VERIFICATION),
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
