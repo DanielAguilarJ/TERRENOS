@@ -18,24 +18,27 @@
  * Respaldos con métricas ajustadas. Con `font-display: swap` el texto se pinta primero con la fuente del sistema y
  * salta al llegar la fuente web; si las dos miden distinto, los párrafos cambian de número de líneas y la página se
  * mueve (CLS). Estas caras reescalan Arial y Times New Roman para que ocupen lo mismo que DM Sans y Libre Caslon
- * Display. Cálculo de next/font (`calculateSizeAdjustValues` en next/dist/server/font-utils.js) con las métricas de
- * next/dist/server/capsize-font-metrics.json: size-adjust = ancho medio web / ancho medio respaldo, y ascent/descent/
- * line-gap divididos entre unitsPerEm x size-adjust. Arimo/Tinos y Liberation son clones métricos de Arial y Times.
- * Cada pila que nombra la fuente web debe llevar su respaldo justo detrás (lo vigila `fuentes-respaldo` del auditor).
+ * Display. Método de next/font (`calculateSizeAdjustValues` en next/dist/server/font-utils.js): ascent/descent/
+ * line-gap de next/dist/server/capsize-font-metrics.json divididos entre unitsPerEm x size-adjust. El size-adjust NO
+ * es el promedio genérico de next/font (104.53 % y 92.06 %, pensado para texto en inglés) sino el cociente de anchos
+ * MEDIDO en Chrome con los .woff2 de /fonts sobre el texto del propio sitio (2026-10-01: 214 párrafos en DM Sans,
+ * 82 encabezados en Libre Caslon): con él la razón de anchos queda en 1.0000 y cambian de alto menos bloques a
+ * 368 px (párrafos 10 -> 7 de 214, encabezados 4 -> 3 de 82). Arimo/Tinos y Liberation son clones métricos de Arial
+ * y Times. Cada pila que nombra la fuente web lleva su respaldo justo detrás (lo vigila `fuentes-respaldo`).
  */
 @font-face {
   font-family: 'DM Sans Fallback';
   src: local('Arial'), local('ArialMT'), local('Arimo'), local('Liberation Sans');
-  size-adjust: 104.53%;
-  ascent-override: 94.90%;
-  descent-override: 29.66%;
+  size-adjust: 103.00%;
+  ascent-override: 96.31%;
+  descent-override: 30.10%;
   line-gap-override: 0.00%;
 }
 @font-face {
   font-family: 'Libre Caslon Display Fallback';
   src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Tinos'), local('Liberation Serif');
-  size-adjust: 92.06%;
-  ascent-override: 105.36%;
-  descent-override: 28.89%;
+  size-adjust: 91.71%;
+  ascent-override: 105.77%;
+  descent-override: 29.00%;
   line-gap-override: 0.00%;
 }
