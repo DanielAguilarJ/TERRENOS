@@ -17,8 +17,10 @@ export function shareMetadata(path: string, title: string, description: string, 
     twitter: { card: "summary_large_image", title, description, images: [siteOrigin + image] },
   };
 }
+/** Nodo de la organización en los datos estructurados; se define en `lib/seo.ts` y se incluye en cada grafo. */
+export const organizacionId = siteOrigin + "/#organizacion";
+
 export const propertyListing = {
-  "@context": "https://schema.org",
   "@type": "RealEstateListing",
   "@id": siteOrigin + "/propiedades/el-bindho#el-bindho",
   url: siteOrigin + "/propiedades/el-bindho",
@@ -33,5 +35,5 @@ export const propertyListing = {
     additionalProperty: { "@type": "PropertyValue", name: "Superficie neta ofertada", value: 76000, unitText: "m²" }
   },
   offers: { "@type": "Offer", price: "30324000", priceCurrency: "MXN", url: siteOrigin + "/propiedades/el-bindho#solicitud", description: "Precio base de compra directa, sin impuestos, gastos notariales, trámites ni urbanización. Condiciones y disponibilidad a confirmar." },
-  publisher: { "@type": "Organization", name: "Asset Management Diamond", url: siteOrigin }
+  publisher: { "@id": organizacionId }
 };
