@@ -22,7 +22,7 @@ export default function PropertyLocation({ property, caption }: { property: Prop
       {place.referencias.length > 0 && <ul className="place-refs" aria-label="Distancias por calle desde el departamento">
         {place.referencias.map(r => <li key={r.nombre}><span>{r.nombre}</span><strong>{km(r.km)}</strong></li>)}
       </ul>}
-      {place.referencias.length > 0 && <p className="place-note">Distancia por calle en auto, calculada con OpenStreetMap. El tiempo depende del tráfico.</p>}
+      {place.referencias.length > 0 && <p className="place-note">Distancia por calle en auto, sin autopistas de cuota, calculada con OpenStreetMap. El tiempo depende del tráfico.</p>}
       <div className="place-actions">
         {links.directions && <a href={links.directions} target="_blank" rel="noreferrer"><Navigation size={17}/> Cómo llegar</a>}
         {links.waze && <a href={links.waze} target="_blank" rel="noreferrer">Abrir en Waze <ArrowUpRight size={16}/></a>}
