@@ -66,14 +66,14 @@ function LandShowcase() {
     </div>
     <div className="showcase-grid">
       <div className="showcase-intro">
-        <p className="showcase-lead">76,000 m² netos en San Agustín Tlaxiaca, municipio vecino de Pachuca y parte de su zona metropolitana: una sola superficie para evaluar un proyecto de otra escala.</p>
+        <p className="showcase-lead">76,000 m² netos en San Agustín Tlaxiaca, municipio vecino de Pachuca, al poniente de la capital: una sola superficie para evaluar un proyecto de otra escala.</p>
         <p>Se ofrece la compra completa o una asociación con la propiedad, mediante fideicomiso o coinversión, para desarrollar un proyecto propio.</p>
       </div>
       <PropertyLocation property="el-bindho" caption="El Bindho está en el municipio de San Agustín Tlaxiaca, al poniente de Pachuca. El polígono exacto y el archivo KMZ se comparten con la documentación."/>
       <div className="showcase-copy">
         <ul className="showcase-points">
           <li><Check size={17}/> Una sola reserva territorial de 7.6 hectáreas</li>
-          <li><Check size={17}/> En la Zona Metropolitana de Pachuca, al poniente de la capital</li>
+          <li><Check size={17}/> Municipio vecino de Pachuca, al poniente de la capital del estado</li>
           <li><Check size={17}/> Precio base publicado: $399 MXN por m²</li>
           <li><Check size={17}/> Polígono y archivo KMZ con la documentación</li>
         </ul>
